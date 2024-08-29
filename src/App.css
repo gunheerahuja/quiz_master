@@ -1,0 +1,273 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.landing-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensures the container takes up at least the full viewport height */
+}
+
+.hero-section {
+  background: linear-gradient(to right, #007bff, #00d2ff);
+  color: white;
+  padding: 0; /* Remove default padding */
+  margin: 0;  /* Remove default margin */
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative; /* Added for rocket positioning */
+}
+
+.hero-content {
+  max-width: 600px;
+  margin: 0 auto; /* Center the content horizontally */
+}
+
+.hero-content h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+.hero-content p {
+  font-size: 1.2em;
+  margin: 20px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #0056b3;
+}
+
+.rocket-container {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.rocket {
+  width: 100px;
+  animation: landing 5s ease-in-out infinite;
+}
+
+@keyframes landing {
+  0% {
+    transform: translateY(-100vh);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100vh);
+  }
+}
+
+.features {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px 20px;
+  background-color: #f8f9fa;
+}
+
+.feature {
+  max-width: 300px;
+  text-align: center;
+}
+
+.feature h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  font-size: 1em;
+  color: #6c757d;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #343a40;
+  color: white;
+}
+
+/* src/App.css */
+
+
+.login-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(to right, #007bff, #00d2ff);
+  color: #fff;
+}
+
+.login-container {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: slideIn 1s ease-out;
+}
+
+.login-header {
+  font-size: 2em;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #007bff;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.9em;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.login-button:active {
+  background-color: #004494;
+  transform: translateY(0);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* src/App.css (additional responsive styles) */
+@media (max-width: 600px) {
+  .login-container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .login-header {
+    font-size: 1.5em;
+  }
+
+  .login-button {
+    font-size: 1em;
+    padding: 10px;
+  }
+}
+
+
+/* src/components/TestPage.css */
+.test-container {
+  padding: 20px;
+  text-align: center;
+}
+
+.question-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  animation: fadeIn 1s ease-in;
+}
+.camera-feed {
+  margin-bottom: 20px;
+}
+
+.camera-feed video {
+  animation: fadeIn 1s ease-in;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* src/components/MeetingPage.css */
+.meeting-container {
+  padding: 20px;
+  text-align: center;
+}
+/* src/components/CameraFeed.css */
+.camera-feed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+video {
+  width: 100%;
+  max-width: 600px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+}
