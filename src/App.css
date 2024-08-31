@@ -1,31 +1,36 @@
+
+
+/* LandingPage.css */
+
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
+  font-family: Arial, sans-serif;
 }
 
 .landing-page {
   display: flex;
   flex-direction: column;
-  min-height: 100vh; /* Ensures the container takes up at least the full viewport height */
+  min-height: 100vh;
 }
 
 .hero-section {
-  background: linear-gradient(to right, #007bff, #00d2ff);
+  background: linear-gradient(to right, #007bff, #00d2ff), url('../assets/images/hero-background.jpg') no-repeat center center/cover;
   color: white;
-  padding: 0; /* Remove default padding */
-  margin: 0;  /* Remove default margin */
-  height: 100vh; /* Full viewport height */
+  padding: 0;
+  margin: 0;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  position: relative; /* Added for rocket positioning */
+  position: relative;
 }
 
 .hero-content {
   max-width: 600px;
-  margin: 0 auto; /* Center the content horizontally */
+  margin: 0 auto;
 }
 
 .hero-content h1 {
@@ -48,35 +53,38 @@ html, body {
   border: none;
   border-radius: 5px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .cta-button:hover {
   background-color: #0056b3;
+  transform: scale(1.05);
 }
 
 .rocket-container {
   position: absolute;
-  bottom: 0;
+  top: 5%;
+  right: 5%;
   width: 100%;
   display: flex;
   justify-content: center;
+  animation: rocketAnimation 5s infinite linear;
 }
 
 .rocket {
-  width: 100px;
-  animation: landing 5s ease-in-out infinite;
+  width: 300px;
+  height: auto;
 }
 
-@keyframes landing {
+@keyframes rocketAnimation {
   0% {
-    transform: translateY(-100vh);
+    transform: translateY(-10px);
   }
   50% {
-    transform: translateY(0);
+    transform: translateY(10px);
   }
   100% {
-    transform: translateY(-100vh);
+    transform: translateY(-10px);
   }
 }
 
@@ -90,6 +98,17 @@ html, body {
 .feature {
   max-width: 300px;
   text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+}
+
+.feature-icon {
+  font-size: 3em;
+  color: #007bff;
+  margin-bottom: 10px;
 }
 
 .feature h2 {
@@ -109,9 +128,24 @@ html, body {
   color: white;
 }
 
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: #ffffff;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+
 /* src/App.css */
 
-
+/* General styling for the login page */
 .login-page {
   display: flex;
   align-items: center;
@@ -137,6 +171,35 @@ html, body {
   margin-bottom: 20px;
   text-align: center;
   color: #007bff;
+}
+
+.role-selection {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.role-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.role-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+.role-button:active {
+  background-color: #004494;
+  transform: translateY(0);
 }
 
 .login-form {
@@ -198,7 +261,8 @@ html, body {
     transform: translateY(0);
   }
 }
-/* src/App.css (additional responsive styles) */
+
+/* Responsive styles */
 @media (max-width: 600px) {
   .login-container {
     width: 90%;
@@ -209,12 +273,11 @@ html, body {
     font-size: 1.5em;
   }
 
-  .login-button {
+  .role-button, .login-button {
     font-size: 1em;
     padding: 10px;
   }
 }
-
 
 /* src/components/TestPage.css */
 .test-container {
@@ -270,4 +333,265 @@ video {
   max-width: 600px;
   border: 2px solid #ddd;
   border-radius: 8px;
+}
+
+
+
+/* src/components/ExpertDashboard.css */
+
+/* Main container styling */
+.expert-dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  min-height: 100vh;
+  background: #f0f8ff; /* Alice Blue */
+  color: #333;
+}
+
+/* Header styling */
+.expert-dashboard h1 {
+  font-size: 2.5em;
+  color: #87ceeb; /* Sky Blue */
+  margin-bottom: 30px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Table styling */
+.candidates-table {
+  width: 100%;
+  max-width: 1200px;
+  border-collapse: separate;
+  border-spacing: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.candidates-table th, .candidates-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.candidates-table th {
+  background-color: #87cefa; /* Light Sky Blue */
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.candidates-table td {
+  background-color: #f0f8ff; /* Alice Blue */
+  transition: background-color 0.3s ease;
+}
+
+.candidates-table tr:nth-child(even) td {
+  background-color: #e0ffff; /* Light Cyan */
+}
+
+.candidates-table tr:hover td {
+  background-color: #b0e0e6; /* Powder Blue */
+}
+
+/* Button styling */
+.create-interview-button, .view-report-button {
+  display: inline-block;
+  padding: 12px 25px;
+  margin-top: 20px;
+  font-size: 1.1em;
+  color: #ffffff;
+  background-color: #87ceeb; /* Sky Blue */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.create-interview-button:hover, .view-report-button:hover {
+  background-color: #4682b4; /* Steel Blue */
+  transform: translateY(-2px);
+}
+
+.create-interview-button:active, .view-report-button:active {
+  background-color: #4169e1; /* Royal Blue */
+  transform: translateY(0);
+}
+
+
+/* src/components/CreateInterview.css */
+
+.create-interview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  min-height: 100vh;
+  background: linear-gradient(to right, #f3f4f6, #dfe7fd); /* Light gray to soft blue gradient */
+  color: #333;
+}
+
+.create-interview h1 {
+  font-size: 2.5em;
+  color: #007bff;
+  margin-bottom: 20px;
+}
+
+.create-interview form {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+}
+
+.create-interview label {
+  display: block;
+  margin: 10px 0 5px;
+  font-size: 1.1em;
+}
+
+.create-interview input, .create-interview textarea, .create-interview button {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.create-interview button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.create-interview button:hover {
+  background-color: #0056b3;
+}
+
+/* src/components/ReportPage.css */
+.report-page {
+  padding: 20px;
+}
+
+.report-content {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.video-container, .report-text {
+  margin-bottom: 20px;
+}
+
+.video-container a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.video-container a:hover {
+  text-decoration: underline;
+}
+
+.approval-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.approve-button, .disapprove-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.approve-button {
+  background-color: #28a745;
+  color: white;
+}
+
+.disapprove-button {
+  background-color: #dc3545;
+  color: white;
+}
+
+.approve-button:hover {
+  background-color: #218838;
+}
+
+.disapprove-button:hover {
+  background-color: #c82333;
+}
+.thank-you-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+.thank-you-content {
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+.thank-you-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.thank-you-content p {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.feedback-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1em;
+  resize: none;
+  margin-bottom: 15px;
+  background-color: #f9f9f9;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
 }
