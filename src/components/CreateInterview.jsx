@@ -10,17 +10,33 @@ function CreateInterview() {
     }}>
       <h1>Create Interview</h1>
       <form>
-        <label htmlFor="title">Interview Title</label>
-        <input type="text" id="title" name="title" required />
+        <label style={{
+          color: 'white',
+          }} htmlFor="title">Interview Title</label>
+        <input style={{
+          backgroundColor: 'grey',
+          }}type="text" id="title" name="title" required />
 
-        <label htmlFor="description">Description</label>
-        <textarea id="description" name="description" rows="5" required></textarea>
+        <label style={{
+          color: 'white',
+          }} htmlFor="description">Description</label>
+        <textarea style={{
+          backgroundColor: 'grey',
+          }} id="description" name="description" rows="5" required></textarea>
 
-        <label htmlFor="date">Date</label>
-        <input type="date" id="date" name="date" required />
+        <label style={{
+          color: 'white',
+          }} htmlFor="date">Date</label>
+        <input style={{
+          backgroundColor: 'grey',
+          }}type="date" id="date" name="date" required />
 
-        <label htmlFor="time">Time</label>
-        <input type="time" id="time" name="time" required />
+        <label style={{
+          color: 'white',
+          }} htmlFor="time">Time</label>
+        <input style={{
+          backgroundColor: 'grey',
+          }}type="time" id="time" name="time" required />
 
         <button type="submit">Create Interview</button>
       </form>

@@ -15,9 +15,18 @@ function ReportPage() {
   };
 
   return (
-    <div className="report-page">
-      <h1>Report for Candidate {id}</h1>
-      <div className="report-content">
+    <div className="report-page"
+    style={{
+      backgroundColor:'#1e1e1e'
+    }}>
+      <h1
+      style={{
+        color:'white'
+      }}>Report for Candidate {id}</h1>
+      <div className="report-content"
+      style={{
+        backgroundColor:'lightgray',
+      }}>
         <div className="video-container">
           <h2>Video</h2>
           <a href={report.videoLink} target="_blank" rel="noopener noreferrer">Watch Video</a>
