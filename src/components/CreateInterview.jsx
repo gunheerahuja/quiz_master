@@ -4,7 +4,10 @@ import React from 'react';
 
 function CreateInterview() {
   return (
-    <div className="create-interview">
+    <div className="create-interview"
+    style={{
+      backgroundColor: 'white',
+    }}>
       <h1>Create Interview</h1>
       <form>
         <label htmlFor="title">Interview Title</label>

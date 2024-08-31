@@ -1,7 +1,4 @@
-
-
 /* LandingPage.css */
-
 html, body {
   margin: 0;
   padding: 0;
@@ -156,7 +153,7 @@ html, body {
 }
 
 .login-container {
-  background: #fff;
+  background: #232020;
   color: #333;
   padding: 20px;
   border-radius: 8px;
@@ -177,6 +174,9 @@ html, body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+}
+.role-selection p {
+color: #00d2ff;
 }
 
 .role-button {
@@ -346,7 +346,7 @@ video {
   align-items: center;
   padding: 40px;
   min-height: 100vh;
-  background: #f0f8ff; /* Alice Blue */
+  background: #1e1e1e; /* Alice Blue */
   color: #333;
 }
 
@@ -377,22 +377,34 @@ video {
 }
 
 .candidates-table th {
-  background-color: #87cefa; /* Light Sky Blue */
+  background-color: #5089ac; /* Light Sky Blue */
   color: #ffffff;
   font-weight: 600;
 }
 
 .candidates-table td {
-  background-color: #f0f8ff; /* Alice Blue */
+  background-color: rgb(44,62,80); /* Alice Blue */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.candidates-table td a {
+  /* background-color: rgb(44,62,80); Alice Blue */
+  color: white;
+  transition: background-color 0.3s ease;
+}
+.candidates-table td a:hover {
+  /* background-color: rgb(44,62,80); Alice Blue */
+  color: rgb(56, 14, 75);
   transition: background-color 0.3s ease;
 }
 
+
 .candidates-table tr:nth-child(even) td {
-  background-color: #e0ffff; /* Light Cyan */
+  background-color: rgb(44,62,80); /* Light Cyan */
 }
 
 .candidates-table tr:hover td {
-  background-color: #b0e0e6; /* Powder Blue */
+  background-color: #1c5d5d; /* Powder Blue */
 }
 
 /* Button styling */
@@ -402,7 +414,7 @@ video {
   margin-top: 20px;
   font-size: 1.1em;
   color: #ffffff;
-  background-color: #87ceeb; /* Sky Blue */
+  background-color: #5089ac; /* Sky Blue */
   border: none;
   border-radius: 5px;
   text-decoration: none;
@@ -411,7 +423,7 @@ video {
 }
 
 .create-interview-button:hover, .view-report-button:hover {
-  background-color: #4682b4; /* Steel Blue */
+  background-color: #24435c; /* Steel Blue */
   transform: translateY(-2px);
 }
 
@@ -430,7 +442,7 @@ video {
   justify-content: center;
   padding: 20px;
   min-height: 100vh;
-  background: linear-gradient(to right, #f3f4f6, #dfe7fd); /* Light gray to soft blue gradient */
+  background: linear-gradient(to right, #22242a, #2e3547); /* Light gray to soft blue gradient */
   color: #333;
 }
 
@@ -441,7 +453,7 @@ video {
 }
 
 .create-interview form {
-  background: #fff;
+  background: #575555;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -460,7 +472,7 @@ video {
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  border: 1px solid #898484;
 }
 
 .create-interview button {

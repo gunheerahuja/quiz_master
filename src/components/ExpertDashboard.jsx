@@ -25,7 +25,8 @@ function ExpertDashboard() {
           {candidates.map(candidate => (
             <tr key={candidate.id}>
               <td>{candidate.name}</td>
-              <td><a href={candidate.profile} target="_blank" rel="noopener noreferrer">View Profile</a></td>
+              <td><a
+               href={candidate.profile} target="_blank" rel="noopener noreferrer">View Profile</a></td>
               <td>{candidate.position}</td>
               <td>
                 <Link to={`/report/${candidate.id}`} className="view-report-button">View Report</Link>

@@ -32,7 +32,10 @@ function LoginPage() {
         {role && (
           <form onSubmit={handleSubmit} className="login-form">
             <div className="input-group">
-              <label htmlFor="email">Email</label>
+              <label style={{
+          color: 'white',
+        }}
+              htmlFor="email">Email</label>
               <input
                 type="email"
                 id="email"
@@ -42,7 +45,10 @@ function LoginPage() {
               />
             </div>
             <div className="input-group">
-              <label htmlFor="password">Password</label>
+              <label style={{
+          color: 'white',
+        }}
+               htmlFor="password">Password</label>
               <input
                 type="password"
                 id="password"
@@ -54,7 +60,11 @@ function LoginPage() {
             <button type="submit" className="login-button">Login</button>
           </form>
         )}
-        {!role && <p>Please select a role to log in.</p>}
+        {!role && <p
+        style={{
+          color: 'white',
+        }}
+        >Please select a role to log in.</p>}
       </div>
     </div>
   );

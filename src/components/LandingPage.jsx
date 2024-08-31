@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import rocketImage from '../assets/images/rocketimg.png';
 import { FaRobot, FaEye, FaLock } from 'react-icons/fa';
 
 function LandingPage() {
